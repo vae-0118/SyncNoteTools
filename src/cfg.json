@@ -1,0 +1,20 @@
+{
+  "yuqueToken": "",
+  "evernoteHost": "app.yinxiang.com",
+  "evernoteToken": "",
+  "qiniuAccess_key": "",
+  "qiniuSecret_key": "",
+  "qiniuBucket_name": "",
+  "qiniuBaseUrl": "",
+  "syncNoteDbPath": "SyncNoteDB.sqlite3",
+  "syncEvernoteBookMap": [
+    {
+      "evernote":"enboo1",
+      "yuque":"yqbook1"
+    },
+    {
+      "evernote":"02.enbook2",
+      "yuque":"yqbook1"
+    }
+  ]
+}
