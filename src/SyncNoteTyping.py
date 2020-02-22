@@ -19,7 +19,7 @@ from enum import Enum
 import os
 
 # 应用程序的版本号
-PROGRAM_VERSION = '0.0.1'
+PROGRAM_VERSION = '0.0.2'
 
 # 当前的路径
 PROJECT_PATH = os.path.abspath(os.path.dirname(__file__))

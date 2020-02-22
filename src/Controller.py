@@ -15,19 +15,17 @@ class Controller(object):
     '''
 
     def __init__(self):
-
+        # 获取配置
         sysCfg = SystemConfig()
         sysCfg.LoadConfigFile('cfg.json')
 
-        # 获取配置
-        self._configuration = sysCfg
-
         # 构造印象笔记的客户端
         self._evernoteCtrl = EvernoteCtrl(
-            self._configuration.EvernoteToken,
-            self._configuration.EvernoteHost)
+            sysCfg.EvernoteToken,
+            sysCfg.EvernoteHost)
 
-        self._yuqueCtrl = YuqueCtrl(self._configuration.YuqueToken, 'vae')
+        self._yuqueCtrl = YuqueCtrl(
+            sysCfg.YuqueToken, 'vae')
 
     def CheckSys(self):
         '''
@@ -93,8 +91,11 @@ class Controller(object):
         return True
 
     def _UpdateSyncMap(self):
+        sysCfg = SystemConfig()
+        sysCfg.LoadConfigFile('cfg.json')
+
         db = DBOperator()
-        db.UpdateYuqueEvernoteBookMap(self._configuration.BookMapList)
+        db.UpdateYuqueEvernoteBookMap(sysCfg.BookMapList)
 
         return
 
